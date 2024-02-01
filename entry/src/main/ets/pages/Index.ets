@@ -1,3 +1,5 @@
+import router from '@ohos.router'
+
 @Entry
 @Component
 struct Index {
@@ -9,6 +11,28 @@ struct Index {
         Text(this.message)
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
+
+        Button() {
+          Text('next')
+            .fontWeight(FontWeight.Bold)
+            .fontColor(Color.White)
+            .fontSize(26)
+        }
+        .backgroundColor(Color.Blue)
+        .type(ButtonType.Capsule)
+        .width('40%')
+        .height('5%')
+        .margin({
+          top: 20
+        })
+        .onClick((event) => {
+          router.pushUrl({ url: 'pages/Second' })
+            .then(() => {
+
+          }).catch((err) => {
+
+          })
+        })
       }
       .width('100%')
     }
